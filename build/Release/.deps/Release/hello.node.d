@@ -1,1 +1,1 @@
-cmd_Release/hello.node := c++ -bundle -undefined dynamic_lookup -Wl,-no_pie -Wl,-search_paths_first -mmacosx-version-min=10.10 -arch x86_64 -L./Release -stdlib=libc++  -L/usr/local/opt/zlib/lib -L/usr/local/opt/zlib/lib -o Release/hello.node Release/obj.target/hello/hello.o -L/usr/local/Cellar/libngspice/36/lib -lngspice
+cmd_Release/hello.node := c++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.13 -arch x86_64 -L./Release -stdlib=libc++ -L../35/lib  -o Release/hello.node Release/obj.target/hello/hello.o -lngspice.0

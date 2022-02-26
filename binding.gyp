@@ -19,11 +19,11 @@
           }
         }]
       ],
+    "libraries":["libngspice.0.dylib"],
     "link_settings": {
-        "libraries": [
-          "-L/usr/local/Cellar/libngspice/36/lib",
-          "libngspice.dylib"
-          ],
+        "library_dirs": [
+          "../35/lib",
+          ]
       }
     }
   ]

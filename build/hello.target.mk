@@ -9,6 +9,7 @@ DEFS_Debug := \
 	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-DV8_DEPRECATION_WARNINGS' \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
+	'-D_GLIBCXX_USE_CXX11_ABI=1' \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
@@ -24,7 +25,7 @@ DEFS_Debug := \
 CFLAGS_Debug := \
 	-O0 \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.13 \
 	-arch x86_64 \
 	-Wall \
 	-Wendif-labels \
@@ -38,7 +39,7 @@ CFLAGS_C_Debug := \
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
-	-std=gnu++1y \
+	-std=gnu++14 \
 	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-strict-aliasing \
@@ -51,14 +52,14 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/include/node \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/src \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/openssl/config \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/openssl/openssl/include \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/uv/include \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/zlib \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/v8/include \
-	-I/Users/mima1234/Desktop/dylibtest/node_modules/node-addon-api
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/include/node \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/src \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/openssl/config \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/openssl/openssl/include \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/uv/include \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/zlib \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/v8/include \
+	-I/Users/zhouyin/Desktop/ngspice-wrapper/node_modules/node-addon-api
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=hello' \
@@ -67,6 +68,7 @@ DEFS_Release := \
 	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-DV8_DEPRECATION_WARNINGS' \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
+	'-D_GLIBCXX_USE_CXX11_ABI=1' \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
@@ -77,9 +79,9 @@ DEFS_Release := \
 
 # Flags passed to all source files.
 CFLAGS_Release := \
-	-Os \
+	-O3 \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.13 \
 	-arch x86_64 \
 	-Wall \
 	-Wendif-labels \
@@ -93,7 +95,7 @@ CFLAGS_C_Release := \
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
-	-std=gnu++1y \
+	-std=gnu++14 \
 	-stdlib=libc++ \
 	-fno-rtti \
 	-fno-strict-aliasing \
@@ -106,14 +108,14 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/include/node \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/src \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/openssl/config \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/openssl/openssl/include \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/uv/include \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/zlib \
-	-I/Users/mima1234/Library/Caches/node-gyp/12.14.1/deps/v8/include \
-	-I/Users/mima1234/Desktop/dylibtest/node_modules/node-addon-api
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/include/node \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/src \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/openssl/config \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/openssl/openssl/include \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/uv/include \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/zlib \
+	-I/Users/zhouyin/Library/Caches/node-gyp/16.13.1/deps/v8/include \
+	-I/Users/zhouyin/Desktop/ngspice-wrapper/node_modules/node-addon-api
 
 OBJS := \
 	$(obj).target/$(TARGET)/hello.o
@@ -146,35 +148,32 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cc FORCE_DO_CMD
 ### Rules for final target.
 LDFLAGS_Debug := \
 	-undefined dynamic_lookup \
-	-Wl,-no_pie \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.13 \
 	-arch x86_64 \
 	-L$(builddir) \
-	-stdlib=libc++
+	-stdlib=libc++ \
+	-L../35/lib
 
 LIBTOOLFLAGS_Debug := \
 	-undefined dynamic_lookup \
-	-Wl,-no_pie \
 	-Wl,-search_paths_first
 
 LDFLAGS_Release := \
 	-undefined dynamic_lookup \
-	-Wl,-no_pie \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.13 \
 	-arch x86_64 \
 	-L$(builddir) \
-	-stdlib=libc++
+	-stdlib=libc++ \
+	-L../35/lib
 
 LIBTOOLFLAGS_Release := \
 	-undefined dynamic_lookup \
-	-Wl,-no_pie \
 	-Wl,-search_paths_first
 
 LIBS := \
-	-L/usr/local/Cellar/libngspice/36/lib \
-	-lngspice
+	-lngspice.0
 
 $(builddir)/hello.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))
 $(builddir)/hello.node: LIBS := $(LIBS)

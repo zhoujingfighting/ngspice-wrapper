@@ -29,14 +29,6 @@ Napi::Object Init(Napi::Env env, Napi::Object exports)
     exports.Set(Napi::String::New(env, "add"), Napi::Function::New(env, Add));
     return exports;
 }
-Napi::Object Init(Napi::Env env, Napi::Object exports)
-{
-    // exports.Set(Napi::String::New(env, 'test'),
-    //             Napi::Function::New(env, Method));
-    //这里有多少种方法就需要暴露出来！！前面一个是函数名，后面一个是具体的方法！！
-    exports.Set(Napi::String::New(env, "add"), Napi::Function::New(env, Add));
-    return exports;
-}
 //表示指针的意思
 /**
  *
